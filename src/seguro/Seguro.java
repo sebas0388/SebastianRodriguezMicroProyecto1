@@ -21,7 +21,7 @@ public class Seguro {
         String Brand;
         int YEAR;
         int FinalFee;
-        String [] HighEnd = {"AUDI","VOLVO","MERCEDESBENZ","PORSCHE","FERRARI"};
+        String [] HighEnd = {"AUDI","VOLVO","MERCEDESBENZ","PORSCHE","FERRARI","ALFAROMEO"};
         
         
         Brand = JOptionPane.showInputDialog(null ,"Ingrese la marca del vehiculo", "Seguros Rodriguez",JOptionPane.WARNING_MESSAGE ).toUpperCase();
