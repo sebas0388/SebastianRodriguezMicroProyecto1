@@ -18,38 +18,38 @@ public class Seguro {
      */
     public static void main(String[] args) {
      
-        String MARCA;
-        int ANIO;
-        int CUOTAFINAL;
-        String [] ALTAGAMA = {"AUDI","VOLVO","MERCEDESBENZ","PORSCHE","FERRARI"};
+        String Brand;
+        int YEAR;
+        int FinalFee;
+        String [] HighEnd = {"AUDI","VOLVO","MERCEDESBENZ","PORSCHE","FERRARI"};
         
         
-        MARCA = JOptionPane.showInputDialog(null ,"Ingrese la marca del vehiculo", "Seguros Rodriguez",JOptionPane.WARNING_MESSAGE );
+        Brand = JOptionPane.showInputDialog(null ,"Ingrese la marca del vehiculo", "Seguros Rodriguez",JOptionPane.WARNING_MESSAGE ).toUpperCase();
      
         
-        ANIO = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese el año del vehiculo", "Seguros Rodriguez",JOptionPane.WARNING_MESSAGE));
+        YEAR = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese el año del vehiculo", "Seguros Rodriguez",JOptionPane.WARNING_MESSAGE));
                
-        boolean GAMA = BUSCARGAMA(ALTAGAMA , MARCA);
+        boolean GAMA = SEARCH(HighEnd , Brand);
         
         if (GAMA){
-        CUOTAFINAL = 5000;
+        FinalFee = 5000;
         
                  }else{
-                    CUOTAFINAL = 900;
+                    FinalFee = 900;
                       }
         
         
-       int CUOTAANIO = BUSCARANIO(ANIO);
-       CUOTAFINAL = CUOTAFINAL + CUOTAANIO;
+       int YearFee = BUSCARANIO(YEAR);
+       FinalFee = FinalFee + YearFee;
 
-       JOptionPane.showMessageDialog(null ,"El valor de su cuota es: $" + CUOTAFINAL , "Seguros Rodriguez",JOptionPane.INFORMATION_MESSAGE );
+       JOptionPane.showMessageDialog(null ,"El valor de su cuota es: $" + FinalFee , "Seguros Rodriguez",JOptionPane.INFORMATION_MESSAGE );
     }
     
-    public static boolean BUSCARGAMA (String [] ALTAGAMA , String MARCA){
+    public static boolean SEARCH (String [] Array , String Nombre ){
     
                    
-     for( String  MARCA2 : ALTAGAMA){
-      if( MARCA2.equals(MARCA)){
+     for( String  N : Array){
+      if( N.equals(Nombre)){
             return true;
                                 }              
                         }
@@ -57,25 +57,25 @@ public class Seguro {
     }
     
 
-    public static int BUSCARANIO( int ANIO ){
+    public static int BUSCARANIO( int Y ){
 
-       int cuota; 
+       int Valor; 
         
-       if(ANIO>=1990 && ANIO <=1999 ){
-       cuota = 1300; 
+       if(Y>=1990 && Y<=1999 ){
+       Valor = 1300; 
         }else
-       if(ANIO>=2000 && ANIO <=2010){
-        cuota=1500;
+       if(Y>=2000 && Y<=2010){
+        Valor=1500;
         } else
-       if(ANIO>=2011 && ANIO <=2016){
-        cuota=2500;
+       if(Y>=2011 && Y<=2016){
+        Valor=2500;
         } else
-       if(ANIO>=2017 && ANIO <=2020){
-        cuota=4000;
+       if(Y>=2017 && Y<=2020){
+        Valor=4000;
         } else
-        cuota=1200;
+        Valor=1200;
         
-return cuota;
+return Valor;
              }
 
  
