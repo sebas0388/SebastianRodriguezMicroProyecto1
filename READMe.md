@@ -1,3 +1,2 @@
 "#seguros"
-"# seguro" 
 "# SebastianRodriguezMicroProyecto1" 
